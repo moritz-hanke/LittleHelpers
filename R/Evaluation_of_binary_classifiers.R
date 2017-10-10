@@ -66,7 +66,7 @@ evaBin <- function(p=NULL, n=NULL, tp=NULL, tn=NULL, fp=NULL, fn=NULL,s=NULL, s.
     sqrt((TP+FP)*(TP+FN)*(TN+FP)*(TN+FN))
   TPR <- TP/(TP+FN)
   TNR <- TN/(TN+FP)
-  FPR <- FP/N
+  FPR <- FP/(FP+TN)
   FNR <- FN/(FN+TP)
   FDR <- FP/(FP+TP)
   out <-list(c(TP=TP,
