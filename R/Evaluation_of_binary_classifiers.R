@@ -55,7 +55,7 @@ evaBin <- function(p=NULL, n=NULL, tp=NULL, tn=NULL, fp=NULL, fn=NULL,s=NULL, s.
     TP <- sum(which(s.est!=0) %in% which(s!=0))
     FP <- sum(which(s.est!=0) %!in% which(s!=0))
     TN <- sum(which(s.est==0) %in% which(s==0))
-    FN <- sum(which(s==0) %!in% which(s.est==0))
+    FN <- (P+N) - (TP+TN+FP)
   }
 
   Precision <- TP/(TP+FP)
